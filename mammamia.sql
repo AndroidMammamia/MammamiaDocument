@@ -2,7 +2,7 @@ CREATE DATABASE  IF NOT EXISTS `mammamia` /*!40100 DEFAULT CHARACTER SET utf8 */
 USE `mammamia`;
 -- MySQL dump 10.13  Distrib 8.0.17, for macos10.14 (x86_64)
 --
--- Host: 127.0.0.1    Database: mammamia
+-- Host: localhost    Database: mammamia
 -- ------------------------------------------------------
 -- Server version	8.0.17
 
@@ -29,11 +29,12 @@ CREATE TABLE `addrlist` (
   `addrName` varchar(45) DEFAULT NULL,
   `addrTel` varchar(45) DEFAULT NULL,
   `addrAddr` varchar(45) DEFAULT NULL,
-  `addrMemo` varchar(45) DEFAULT NULL,
+  `addrDetail` varchar(45) DEFAULT NULL,
   `addrLike` varchar(45) DEFAULT NULL,
   `addrTag` varchar(45) DEFAULT NULL,
+  `addrProfile` longblob,
   PRIMARY KEY (`addrNo`),
-  UNIQUE KEY `addrlist_UNIQUE` (`addrNo`)
+  UNIQUE KEY `addrNo_UNIQUE` (`addrNo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -45,32 +46,6 @@ LOCK TABLES `addrlist` WRITE;
 /*!40000 ALTER TABLE `addrlist` DISABLE KEYS */;
 /*!40000 ALTER TABLE `addrlist` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `userinfo`
---
-
-DROP TABLE IF EXISTS `userinfo`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `userinfo` (
-  `userinfoId` varchar(45) NOT NULL,
-  `userinfoPw` varchar(45) DEFAULT NULL,
-  `userinfoAddr` varchar(45) DEFAULT NULL,
-  `userinfoTel` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`userinfoId`),
-  UNIQUE KEY `userinfoId_UNIQUE` (`userinfoId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `userinfo`
---
-
-LOCK TABLES `userinfo` WRITE;
-/*!40000 ALTER TABLE `userinfo` DISABLE KEYS */;
-/*!40000 ALTER TABLE `userinfo` ENABLE KEYS */;
-UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -81,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-23 16:19:07
+-- Dump completed on 2020-12-24 23:27:28
