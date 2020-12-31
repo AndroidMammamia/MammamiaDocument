@@ -8,7 +8,7 @@
 	String url_mysql = "jdbc:mysql://database-2.cotrd7tmeavd.ap-northeast-2.rds.amazonaws.com/mammamia?serverTimezone=Asia/Seoul&characterEncoding=utf8&useSSL=false";
  	String id_mysql = "root";
  	String pw_mysql = "qwer1234";
-    String WhereDefault = "select addrNo, addrName, addrTel, addrAddr,addrDetail,addrLike,addrTag,addrImagePath from addrlist Where addrLike = 1";
+    String WhereDefault = "select addrNo, addrName, addrTel, addrAddr,addrDetail,addrLike,addrTag,addrImagePath from addrlist Where addrLike = '1'";
     int count = 0;
      PreparedStatement ps = null;
     ResultSet rs = null;
@@ -38,7 +38,7 @@
 			"addrTel" : "<%=rs.getString(3) %>",  
 			"addrAddr" : "<%=rs.getString(4) %>",
             "addrDetail" : "<%=rs.getString(5) %>",
-            "addrLike ": "<%=rs.getString(6) %>",
+            "addrLike" : "<%=rs.getString(6) %>",
             "addrTag" : "<%=rs.getString(7) %>",
             "addrImagePath" :"<%=rs.getString(8) %>"
 			}
